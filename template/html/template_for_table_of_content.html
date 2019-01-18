@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=utf-8" />
+    <title>Documentation</title>
+    <link rel="stylesheet" type="text/css"
+          href="style_for_table_of_content.css">
+  </head>
+  <body>
+    <div class="body">
+            <br>
+            {% for package in data %}
+                <font size=20 color="#800000">{{package}}</font>
+                <dd>
+                    {% for link in data[package] %}
+                        <a class="doclink" href="classes\\{{link}}">{{link}}</a>
+                        <br>
+                    {% endfor %}
+                </dd>
+                <br>
+            {% endfor %}
+            <br>
+     </div>
+  </body>
+</html>

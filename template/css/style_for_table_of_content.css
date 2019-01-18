@@ -1,0 +1,24 @@
+body {
+    font-family: Bradley Hand, cursive;
+    background-color: #FFF8DC;
+    text-align: center;
+}
+
+a.doclink {
+	font-family: Comic Sans MS, Comic Sans, cursive;
+	font-weight: normal;
+	color: #000000;
+	font-size: 124%;
+	text-decoration: none;
+}
+
+a.modullink {
+	color: #000000	;
+	font-size: 130%;
+	text-decoration: none;
+}
+
+a.doclink:hover {
+    text-decoration: underline;
+}
+

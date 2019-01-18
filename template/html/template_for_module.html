@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=utf-8" />
+    <title>{{module_name}}</title>
+    <link rel="stylesheet" type="text/css"
+          href="style_for_modules.css">
+  </head>
+    <body>
+        <div class="body">
+        {% for function in data['out_classes'] %}
+            <em>def</em>
+            <tt class= "function_name" id="func.name"><b><font size="5">{{function.name}}</font></b><em>{{function.arguments}}</em></tt>
+             <dl class="functions">
+              {% if function.docstrings %}
+                 <dd>
+                   <p>{{function.docstrings}}</p>
+                 </dd>
+              {% endif %}
+             </dl>
+        {%endfor %}
+          {% for class in data['in_classes'] %}
+              <em>class</em>
+            <tt class = "classes_names" id="class.name"><font size="5">
+                <b>{{class.name}}</b></font><br></tt>
+              <dd>
+                  {% if class.docstrings %}
+                      <p>{{class.docstrings}}</p>
+                  {% endif %}
+                  {% for function in class.functions %}
+                          <em>def</em>
+                          <tt class= "function_name" id="function.name"><font size="5">
+                              <b>{{function.name}}</b></font><em>{{function.arguments}}</em></tt>
+                        <dl class="functions">
+                          {% if function.docstrings %}
+                              <dd>
+                            <p>{{function.docstrings}}</p>
+                              </dd>
+                          {% endif %}
+                          </dl>
+                      {%endfor %}
+                </dd>
+             {% endfor %}
+        </div>
+  </body>
+</html>
